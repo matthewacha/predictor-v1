@@ -10,7 +10,6 @@ def genCreatures(number):
 			creature.append(nameOf)
 			legs=random.choice([2,4])
 			creature.append(legs)
-			#mammary=0
 			if legs==2:
 				mammary=2
 			else:
@@ -61,5 +60,3 @@ def genCreatures(number):
 			creature.append(young)
 		Creatures.append(creature)
 	return Creatures
-
-#print genCreatures(10)

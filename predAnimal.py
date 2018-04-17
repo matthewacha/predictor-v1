@@ -7,7 +7,7 @@ import math
 trainData: is the datawhose parameters are used to determine k nearest neighbours
 testData: is the data we feed in to the algorith so it can predict based on its parameters"""
 
-data=gensamples.genCreatures(2000)
+data=gensamples.genCreatures(6000)
 
 def prepData(data,factor,testData=[],trainData=[]):
 	all_data=data
@@ -31,7 +31,7 @@ def euclidist(case1,case2,length_of_data):
 
 #find k nearest neighbor
 
-def neighbors(testInstance,trainData, k):
+def nearest_neighbors(testInstance,trainData, k):
 	length_of_data=len(testInstance)
 	distance=[(trainData[x][0],euclidist(testInstance,trainData[x],length_of_data)) for x in range(len(trainData)) ]
 	distance.sort(key=operator.itemgetter(1), reverse=False)
@@ -55,23 +55,22 @@ def accuracy(predictions,testCase):
 	result=[x for x in range(len(testCase)) if predictions[x]==testCase[x][0]]
 	return (len(result)/float(len(testCase)))*100.0
 
+#prediction method
 def predictor():
 	testData=[]
 	trainData=[]
 	factor=0.75
-	length_of_data=5
 	k=5
 	predictions=[]
 	prepData(data,factor,testData,trainData)
 	for x in range(len(testData)):
-		neighbours=neighbors(testData[x],trainData, k)
+		neighbours=nearest_neighbors(testData[x],trainData, k)
 		result=selectClass(neighbours)
 		prediction=result
 		predictions.append(prediction)
 		print ' {}: predicted: {}, Actual: {}'.format(x,result,testData[x][0])
-	accuracyv=accuracy(predictions,testData)
-	print ''.format(accuracyv)
-	print ' All Data: {} \n testData: {} \n trainigData: {} \n Prediction Accuracy: {}% \n '.format(len(data),len(testData), len(trainData), accuracyv)
+	prediction_accuracy=accuracy(predictions,testData)
+	print '\n All Data: {} \n testData: {} \n trainigData: {} \n Prediction Accuracy: {}% \n '.format(len(data),len(testData), len(trainData), prediction_accuracy)
 	
 	
 predictor()
