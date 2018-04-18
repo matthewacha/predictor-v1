@@ -7,7 +7,7 @@ import math
 trainData: is the datawhose parameters are used to determine k nearest neighbours
 testData: is the data we feed in to the algorith so it can predict based on its parameters"""
 
-data=gensamples.genCreatures(6000)
+data=gensamples.genCreatures(60)
 
 def prepData(data,factor,testData=[],trainData=[]):
 	all_data=data
@@ -68,7 +68,7 @@ def predictor():
 		result=selectClass(neighbours)
 		prediction=result
 		predictions.append(prediction)
-		print ' {}: predicted: {}, Actual: {}'.format(x,result,testData[x][0])
+		print ' {}: predicted: {}, Actual: {}'.format(x+1,result,testData[x][0])
 	prediction_accuracy=accuracy(predictions,testData)
 	print '\n All Data: {} \n testData: {} \n trainigData: {} \n Prediction Accuracy: {}% \n '.format(len(data),len(testData), len(trainData), prediction_accuracy)
 	
