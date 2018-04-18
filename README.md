@@ -40,12 +40,16 @@ The algorythm has a prediction accuracy as shown in  the table:
 
 Number of creatures | Accuracy(%)
 ------------------- | -----------
-       10           | ~20-40    
+       10           | ~20-40   
+------------------- | -----------
        20-25        | ~>30      
+------------------- | -----------
       30-50         | ~>60      
+------------------- | -----------	  
       50-100        | ~85-98    
+------------------- | -----------
       100>          | ~>95      
-
+------------------- | -----------
 The accuracy of the algorythm improves with larger data input.
 
 Cheers!
