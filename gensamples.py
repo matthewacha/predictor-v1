@@ -5,9 +5,9 @@ def genCreatures(number):
 	types=['primate','bird','reptile','fish']
 	for x in range(number):
 		creature=[]
-		nameOf=random.choice(types)
-		if nameOf=='primate':
-			creature.append(nameOf)
+		name_of=random.choice(types)
+		if name_of=='primate':
+			creature.append(name_of)
 			legs=random.choice([2,4])
 			creature.append(legs)
 			if legs==2:
@@ -24,8 +24,8 @@ def genCreatures(number):
 				young=random.choice(range(1,20))
 			creature.append(young)
 
-		elif nameOf=='bird':
-			creature.append(nameOf)
+		elif name_of=='bird':
+			creature.append(name_of)
 			legs=2
 			creature.append(legs)
 			mammary=0
@@ -36,8 +36,8 @@ def genCreatures(number):
 			young=random.choice(range(3,13))
 			creature.append(young)
 			
-		elif nameOf=='reptile':
-			creature.append(nameOf)
+		elif name_of=='reptile':
+			creature.append(name_of)
 			legs=0
 			creature.append(legs)
 			mammary=0
@@ -48,7 +48,7 @@ def genCreatures(number):
 			young=random.choice(range(10,30))
 			creature.append(young)
 		else:
-			creature.append(nameOf)
+			creature.append(name_of)
 			legs=0
 			creature.append(legs)
 			mammary=0
